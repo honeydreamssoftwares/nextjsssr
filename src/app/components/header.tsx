@@ -6,7 +6,7 @@ const Header = () => {
             <li className="p-2"><a href="/">Home</a></li>
             <li className="p-2"><a href="/dashboard">Dashboard</a></li>
             <li className="p-2"><a href="/about">About</a></li>
-            <li className="p-2"><a href="/login">Login</a></li>
+            <li className="p-2"><a href="/api/auth/signin">Login</a></li>
           </ul>
         </header>
       </div>
