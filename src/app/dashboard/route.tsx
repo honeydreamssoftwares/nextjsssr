@@ -12,7 +12,7 @@ export  async function GET(req:NextRequest) {
 
 
 
-  console.log("session", session);
+  console.log("req session",req, session);
   if (session) {
     return NextResponse.json(session);
   }

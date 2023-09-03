@@ -2,6 +2,7 @@ import "./globals.css";
 import type { Metadata } from "next";
 import Header from "./components/header";
 import { SessionProvider } from "next-auth/react";
+import { HeaderWrapper } from "./components/headerwrapper";
 
 export const metadata: Metadata = {
   title: "Honeydreams Softwares",
@@ -16,7 +17,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <Header />
+        <HeaderWrapper />
         {children}
       </body>
     </html>
