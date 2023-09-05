@@ -1,13 +1,12 @@
-"use client"
-import { useSession, getSession } from "next-auth/react";
-const Header = () => {
-  const { data: session, status } = useSession();
-  if (status === "loading") {
-    return <p>Loading...</p>;
-  }
-console.log("status",status);
-const login_text=(status==='authenticated')?"Logout":"Login";
-const login_link=(status==='authenticated')?"/api/auth/signout":"/api/auth/signin";
+import { getServerSession } from "next-auth/next"
+
+import { authOptions } from "../../app/api/auth/[...nextauth]/route";
+export default async function  Header() {
+  const session = await getServerSession(authOptions)
+
+
+const login_text=(session)?"Logout":"Login";
+const login_link=(session)?"/api/auth/signout":"/api/auth/signin";
     return (
       <div className="">
         <header>
@@ -21,5 +20,4 @@ const login_link=(status==='authenticated')?"/api/auth/signout":"/api/auth/signi
       </div>
     );
   };
-  export default Header;
   
